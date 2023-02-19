@@ -1,4 +1,5 @@
 seq/
 rawdata/
 output/
+__pycache__/
 taxdump.tar.gz
