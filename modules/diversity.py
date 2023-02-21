@@ -15,13 +15,17 @@ class Alpha(Diversity):
         return -(relative*np.where(relative==0, 0, np.log(relative))).sum()  
     
     @staticmethod
+    def simpson(asv):
+        relative = asv.to_relative()
+        return  1 - (relative**2).sum()
+    
+    @staticmethod
     def chao1(asv):
         Sobs = (asv > 0).sum()
         occur1 = (asv == 1).sum()
         occur2 = (asv == 2).sum()
         return Sobs + occur1**2/(occur2*2)
     
-
 
 class Beta(Diversity):
     def __init__():
